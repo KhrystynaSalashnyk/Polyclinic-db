@@ -1,4 +1,3 @@
--- Додавання пацієнтів
 INSERT INTO Patients (identification_code, name, address, special_accounting) 
 VALUES 
 ('1234567890', 'John Doe', '123 Main St', 1),
@@ -6,7 +5,6 @@ VALUES
 ('4567891234', 'Mike Johnson', '789 Oak St', 1),
 ('3216549870', 'Anna Brown', '321 Pine St', 0);
 
--- Додавання лікарів
 INSERT INTO Doctors (identification_code, name, specialization, address) 
 VALUES 
 ('5678901234', 'Dr. House', 'Diagnostics', '101 Clinic Rd'),
@@ -14,7 +12,6 @@ VALUES
 ('2345678901', 'Dr. Brown', 'Cardiology', '303 Heart Ave'),
 ('8901234567', 'Dr. White', 'Neurology', '404 Brain St');
 
--- Додавання лікувань
 INSERT INTO Treatment (patients_id, doctors_id, diagnosis, start_date, end_date, effectiveness, status, note, diagnosis_date) 
 VALUES 
 (1, 1, 'Flu', '2025-03-01', '2025-03-10', 90, 'Completed', 'Rest and fluids', '2025-03-01'),
@@ -22,7 +19,6 @@ VALUES
 (3, 3, 'Heart disease', '2025-03-01', '2025-03-30', 80, 'Completed', 'Surgery', '2025-03-01'),
 (4, 4, 'Migraine', '2025-03-05', '2025-03-12', 60, 'Ongoing', 'Pain management', '2025-03-05');
 
--- Додавання ліків
 INSERT INTO Medicines (name) 
 VALUES 
 ('Aspirin'),
@@ -30,7 +26,6 @@ VALUES
 ('Paracetamol'),
 ('Amoxicillin');
 
--- Додавання інгредієнтів
 INSERT INTO Ingredients (name, unit) 
 VALUES 
 ('Acetylsalicylic Acid', 'mg'),
@@ -38,7 +33,6 @@ VALUES
 ('Paracetamol', 'mg'),
 ('Amoxicillin', 'mg');
 
--- Додавання складів ліків
 INSERT INTO Compositions (ingredients_id, medicines_id, amount) 
 VALUES 
 (1, 1, 500.00),
@@ -46,14 +40,12 @@ VALUES
 (3, 3, 300.00),
 (4, 4, 250.00);
 
--- Додавання протипоказань
 INSERT INTO Contraindications (patients_id, ingredients_id) 
 VALUES 
 (1, 3),
 (2, 1),
 (3, 2);
 
--- Додавання призначень
 INSERT INTO Prescription (treatment_id, ingredients_id) 
 VALUES 
 (1, 1),
